@@ -1,0 +1,59 @@
+{
+  "sample_rate_hz": 60000000.0,
+  "center_frequency_hz": 2437500000.0,
+  "segment_ms": 20.0,
+  "start_ms": 0.0,
+  "segments_per_recording": 10,
+  "fft_samples": 65536,
+  "psd_nperseg": 8192,
+  "psd_overlap": 4096,
+  "spectrogram_nperseg": 4096,
+  "spectrogram_overlap": 2048,
+  "dc_exclusion_hz": 250000.0,
+  "target": "flight_mode",
+  "target_column": "mode_code",
+  "feature_names": [
+    "rms_power",
+    "signal_energy",
+    "fft_peak_frequency_mhz",
+    "peak_frequency_mhz",
+    "occupied_bandwidth_mhz",
+    "spectral_entropy",
+    "spectral_centroid_mhz",
+    "spectrogram_temporal_variability",
+    "spectrogram_active_fraction"
+  ],
+  "class_order": [
+    "ON",
+    "HO",
+    "FY"
+  ],
+  "label_mapping": {
+    "ON": "Switched on",
+    "HO": "Hovering",
+    "FY": "Flying"
+  },
+  "segment_rows_per_class": {
+    "ON": 200,
+    "HO": 200,
+    "FY": 200
+  },
+  "source_recordings_per_class": {
+    "ON": 20,
+    "HO": 20,
+    "FY": 20
+  },
+  "training_feature_rows": 600,
+  "training_recordings": 60,
+  "validation": {
+    "fold_count": 5,
+    "segment_count": 600,
+    "recording_count": 60,
+    "segment_balanced_accuracy": 0.665,
+    "segment_macro_f1": 0.6641006796773211,
+    "recording_balanced_accuracy": 0.7999999999999999,
+    "recording_macro_f1": 0.7947206991449759,
+    "chance_balanced_accuracy": 0.3333333333333333
+  },
+  "rf_meaning": "The classifier uses power, spectral position, occupied bandwidth, spectral entropy, and spectrogram activity features extracted from passively received AIR IQ recordings."
+}

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local datasets
+data/
+dataset/
+*.dat
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+
+# Generated cache
+.pytest_cache/
+
+# Project generated scratch outputs
+outputs/raw/
+outputs/tmp/
+outputs/engineering_predictions/
+outputs/engineering_prediction_system/
+outputs/stage4_debug/
+outputs/stage4_debug_segments/
+outputs/stage7_predictions/
+outputs/demo_results.csv
+outputs/demo_summary_report.md
+outputs/demo_confusion_matrix.png

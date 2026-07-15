@@ -1,0 +1,10 @@
+feature,random_forest_importance,permutation_importance_mean_accuracy_drop,permutation_importance_std,stage5_robust_effects,stage5_strongest_effect,stage5_engineering_conclusion
+spectrogram_active_fraction,0.14735753852457145,0.07333333333333336,0.015275252316519482,interaction,interaction,Mode x interference
+spectral_entropy,0.13656696950088978,0.008333333333333314,0.011180339887498933,flight_mode;interference;interaction,flight_mode,Mixed
+occupied_bandwidth_mhz,0.10728407212498972,0.008333333333333304,0.008333333333333304,,none,No robust effect
+fft_peak_frequency_mhz,0.12774894607690299,0.0033333333333333214,0.006666666666666644,flight_mode,flight_mode,Flight mode
+spectrogram_temporal_variability,0.11337930599195659,0.0,0.0,flight_mode;interference;interaction,flight_mode,Mixed
+rms_power,0.1095552952332208,0.0,0.0,flight_mode,flight_mode,Flight mode
+signal_energy,0.10426448602647918,0.0,0.0,flight_mode,flight_mode,Flight mode
+spectral_centroid_mhz,0.08940310887561553,0.0,0.0,flight_mode;interference;interaction,flight_mode,Mixed
+peak_frequency_mhz,0.0644402776453741,0.0,0.0,flight_mode;interference,flight_mode,Mixed

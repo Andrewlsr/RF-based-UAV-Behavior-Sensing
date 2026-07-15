@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this framework in research or engineering work, please cite it using this metadata."
+title: "RF-based UAV Behaviour Sensing using Explainable Machine Learning"
+type: software
+authors:
+  - name: "RF-based UAV Behaviour Sensing using Explainable Machine Learning contributors"
+abstract: "An RF-based UAV behaviour recognition framework that extracts behaviour-related features from passively received radio-frequency signals and identifies UAV operational states, providing sensing-layer information for future airspace monitoring, risk assessment, and autonomous regulation systems."
+license: MIT
+date-released: 2026-07-15
+repository-code: "https://github.com/Andrewlsr/RF-based-UAV-Behavior-Sensing"
+keywords:
+  - UAV
+  - RF sensing
+  - IQ signal processing
+  - explainable machine learning
+  - flight-mode recognition
+references:
+  - type: data
+    title: "DroneDetect Dataset: Radio Frequency Dataset for Unmanned Aerial System (UAS) Signals"
+    publisher:
+      name: "IEEE DataPort"
+    doi: "10.21227/5jjj-1m32"
+    url: "https://ieee-dataport.org/open-access/dronedetect-dataset-radio-frequency-dataset-unmanned-aerial-system-uas-signals-machine"

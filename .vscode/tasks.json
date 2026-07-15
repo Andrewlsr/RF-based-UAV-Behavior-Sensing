@@ -1,0 +1,199 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run IQ, FFT, and Spectrogram",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\stage1_load_air_iq.py",
+                "--data-root",
+                "${input:datasetRoot}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run Stage 4 AIR State Analysis",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\stage4_air_state_analysis.py",
+                "--data-root",
+                "${input:datasetRoot}"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run Stage 5 Factorial Information Analysis",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\stage5_factorial_information_analysis.py"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run Stage 6 Leakage-Safe ML Validation",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\stage6_leakage_safe_ml_validation.py"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Train Engineering Flight Mode Predictor",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\train_model.py",
+                "--data-root",
+                "${input:datasetRoot}"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Predict Engineering AIR Recording",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\predict.py",
+                "--file",
+                "${input:airDatFile}"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run Release Demo",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\run_demo.py",
+                "${input:demoFolder}"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Generate Explainability Report",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\generate_explainability.py"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Create Architecture Diagram",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\create_architecture_diagram.py"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run Reproducibility Check",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}\\scripts\\check_reproducibility.py",
+                "--prediction-file",
+                "${input:airDatFile}"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "datasetRoot",
+            "type": "promptString",
+            "description": "DroneDetect DATASET root folder",
+            "default": "data"
+        },
+        {
+            "id": "demoFolder",
+            "type": "promptString",
+            "description": "Folder containing AIR .dat recordings",
+            "default": "data"
+        },
+        {
+            "id": "airDatFile",
+            "type": "promptString",
+            "description": "AIR .dat file to predict",
+            "default": "example.dat"
+        }
+    ]
+}
