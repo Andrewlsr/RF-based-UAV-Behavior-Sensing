@@ -51,9 +51,8 @@ docs/
   system_architecture.png
 
 outputs/
-  demo_results.csv
-  demo_summary_report.md
-  demo_confusion_matrix.png
+  final_figures/
+  reports/
   explainability/
 ```
 
@@ -74,7 +73,7 @@ The scientific conclusions are internally consistent:
 
 README claims match the actual Stage 6 metrics from:
 
-`outputs/stage6_leakage_safe_ml_validation/grouped_cv_overall_metrics.csv`
+`outputs/reports/stage6_leakage_safe_validation_report.md`
 
 No audited statement claims distance estimation, localization, trajectory tracking, or autonomous response capability.
 
@@ -224,7 +223,7 @@ Demo result:
 - 15 clean AIR recordings analysed
 - 5 ON, 5 HO, 5 FY
 - Demo accuracy: `100.0%`
-- Output: `outputs/demo_results.csv`
+Generated demo outputs were removed after verification and are not included in the public release tree.
 
 Important interpretation:
 
