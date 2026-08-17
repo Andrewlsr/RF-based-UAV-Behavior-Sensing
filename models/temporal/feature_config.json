@@ -1,0 +1,45 @@
+{
+  "sample_rate_hz": 60000000.0,
+  "center_frequency_hz": 2437500000.0,
+  "segment_ms": 40.0,
+  "start_ms": 0.0,
+  "segments_per_recording": 10,
+  "fft_samples": 65536,
+  "psd_nperseg": 8192,
+  "psd_overlap": 4096,
+  "spectrogram_nperseg": 4096,
+  "spectrogram_overlap": 2048,
+  "dc_exclusion_hz": 250000.0,
+  "target": "flight_mode",
+  "feature_names": [
+    "rms_power",
+    "signal_energy",
+    "fft_peak_frequency_mhz",
+    "peak_frequency_mhz",
+    "occupied_bandwidth_mhz",
+    "spectral_entropy",
+    "spectral_centroid_mhz",
+    "spectrogram_temporal_variability",
+    "spectrogram_active_fraction"
+  ],
+  "class_order": [
+    "ON",
+    "HO",
+    "FY"
+  ],
+  "label_mapping": {
+    "ON": "Switched on",
+    "HO": "Hovering",
+    "FY": "Flying"
+  },
+  "training_feature_rows": 600,
+  "training_recordings": 60,
+  "model": {
+    "type": "RandomForestClassifier",
+    "n_estimators": 300,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "random_state": 42
+  },
+  "purpose": "Additional 40 ms temporal model; original production RF remains unchanged."
+}
