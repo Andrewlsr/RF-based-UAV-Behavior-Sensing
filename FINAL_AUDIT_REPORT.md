@@ -1,4 +1,4 @@
-﻿# Final Project Audit Report
+# Final Project Audit Report
 
 Project: RF-based UAV Behaviour Sensing Framework using Explainable Traditional Machine Learning
 
@@ -228,7 +228,7 @@ Demo result:
 
 Important interpretation:
 
-The demo result is a demonstration on a selected labeled folder, not the unbiased project performance estimate. The unbiased performance estimate remains the Stage 6 recording-grouped validation result: `80.0%` balanced accuracy for flight mode.
+The demo result is a demonstration on a selected labeled folder, not the final production performance estimate. The current final production performance estimate is the Round 18 recording-grouped outer cross-validation result: `95.0%` accuracy (`57/60`) for the complete AIR dataset. The earlier Stage 6 result of `80.0%` balanced accuracy remains documented as historical validation of the original production model.
 
 ## 3. Remaining Issues
 

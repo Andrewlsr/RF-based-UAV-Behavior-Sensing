@@ -101,7 +101,37 @@ $env:DRONEDETECT_DATASET_ROOT = "path/to/DroneDetect/AIR"
 
 ## 5. Results
 
-Leakage-safe recording-grouped validation produced:
+### Final production result
+
+The final production pipeline was evaluated on all 60 AIR recordings using recording-grouped outer cross-validation with five held-out groups and inner grouped out-of-fold rule selection. No held-out recording was used to train its outer-fold model, and no all-data self-test was used.
+
+| Method | Accuracy | Balanced accuracy | Macro-F1 | Correct |
+|---|---:|---:|---:|---:|
+| Original production RF | 91.67% | 91.67% | 91.61% | 55/60 |
+| + FY temporal rule | 93.33% | 93.33% | 93.27% | 56/60 |
+| **Final FY + HO temporal optimization** | **95.00%** | **95.00%** | **94.97%** | **57/60** |
+
+Final class performance:
+
+| Class | Correct |
+|---|---:|
+| ON | 20/20 (100.00%) |
+| HO | 17/20 (85.00%) |
+| FY | 20/20 (100.00%) |
+
+Final confusion matrix:
+
+| True / Pred | ON | HO | FY |
+|---|---:|---:|---:|
+| ON | 20 | 0 | 0 |
+| HO | 0 | 17 | 3 |
+| FY | 0 | 0 | 20 |
+
+The temporal optimization changed two recording-level predictions, corrected both baseline errors, and introduced zero harmful changes.
+
+### Historical engineering validation
+
+The earlier Stage 6 analysis remains documented as historical validation of the original engineering model:
 
 | Task | Balanced accuracy |
 |---|---:|
@@ -109,10 +139,7 @@ Leakage-safe recording-grouped validation produced:
 | Interference: `00` / `01` / `10` / `11` | `51.7%` |
 | Full 12-state tag | `41.7%` |
 
-Engineering interpretation:
-
-Flight mode is the strongest generalizable RF information source. Interference contributes secondary information, and the flight-mode x interference interaction exists, but the full 12-state target is not yet as reliable as the flight-mode target.
-
+These historical results should not be confused with the current final temporal production result above.
 ## 6. Usage
 
 Install dependencies:

@@ -174,6 +174,27 @@ Overall demo accuracy: 100.0%
 
 Generated local demo outputs were removed after verification.
 
+## Final Production Validation — Round 18
+
+The final production pipeline was validated on all 60 AIR recordings using recording-grouped outer cross-validation with five held-out groups and inner grouped out-of-fold rule selection.
+
+| Method | Accuracy | Balanced accuracy | Macro-F1 | Correct |
+|---|---:|---:|---:|---:|
+| Original production RF | 91.67% | 91.67% | 91.61% | 55/60 |
+| + FY temporal rule | 93.33% | 93.33% | 93.27% | 56/60 |
+| **Final FY + HO temporal optimization** | **95.00%** | **95.00%** | **94.97%** | **57/60** |
+
+Final class performance:
+
+- ON: 20/20 (100.00%)
+- HO: 17/20 (85.00%)
+- FY: 20/20 (100.00%)
+
+The temporal optimization corrected two baseline errors and introduced zero harmful changes.
+
+Validation was recording-grouped and out-of-sample. No all-data self-test was used, and no model artifact was modified during validation.
+
+The earlier Stage 6 metrics remain historical validation results for the original production model.
 ## GitHub Release Readiness
 
 READY FOR RELEASE
